@@ -1,5 +1,6 @@
-package day10_actions;
+package day11_faker_file;
 
+import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,10 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class C06_KeywordActions extends TestBase {
-
+public class C01_Faker extends TestBase {
     @Test
-    public void test01() {
+    public void Test01()  {
         //facebook ana sayfaya gidip
         //yenı kayıt olustura basalım
         //ısım kutusunu locate edip
@@ -20,20 +20,21 @@ public class C06_KeywordActions extends TestBase {
         driver.get("https://wwww.facebook.com");
         driver.findElement(By.xpath("//a[@class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
         WebElement firstNameElementi=driver.findElement(By.xpath("//input[@name='firstname']"));
+
         Actions actions=new Actions(driver);
-        actions.sendKeys("ibrahim"+Keys.TAB)
-                .sendKeys("akdeniz").sendKeys(Keys.TAB)
-                .sendKeys("ibrahimakdeniz@gmail.com").sendKeys(Keys.TAB)
-                .sendKeys("ibrahimakdeniz@gmail.co").sendKeys(Keys.TAB)
-                .sendKeys("1234").sendKeys(Keys.TAB).sendKeys(Keys.TAB)
+        Faker faker=new Faker();
+        String fakeMail=faker.internet().emailAddress();
+
+        actions.click(firstNameElementi)
+                .sendKeys(faker.name().firstName()+ Keys.TAB)
+                .sendKeys(faker.name().lastName()).sendKeys(Keys.TAB)
+                .sendKeys(fakeMail).sendKeys(Keys.TAB)
+                .sendKeys(fakeMail).sendKeys(Keys.TAB)
+                .sendKeys(faker.internet().password()).sendKeys(Keys.TAB).sendKeys(Keys.TAB)
                 .sendKeys("05").sendKeys(Keys.TAB)
                 .sendKeys("Şub").sendKeys(Keys.TAB)
                 .sendKeys("1984").sendKeys(Keys.TAB).sendKeys(Keys.TAB)
                 .sendKeys(Keys.RIGHT).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB)
                 .sendKeys(Keys.ENTER).perform();
-
-
-
-
     }
 }
