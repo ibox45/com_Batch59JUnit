@@ -10,7 +10,7 @@ import utilities.TestBase;
 public class C06_KeywordActions extends TestBase {
 
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
         //facebook ana sayfaya gidip
         //yenı kayıt olustura basalım
         //ısım kutusunu locate edip
@@ -20,6 +20,7 @@ public class C06_KeywordActions extends TestBase {
         driver.get("https://wwww.facebook.com");
         driver.findElement(By.xpath("//a[@class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")).click();
         WebElement firstNameElementi=driver.findElement(By.xpath("//input[@name='firstname']"));
+
         Actions actions=new Actions(driver);
         actions.sendKeys("ibrahim"+Keys.TAB)
                 .sendKeys("akdeniz").sendKeys(Keys.TAB)
