@@ -1,4 +1,4 @@
-package day12_Senkronizasyon;
+package a.serbest_Calisma;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class Challange extends TestBase {
+public class C02_Challange extends TestBase {
 
 
 
