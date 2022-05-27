@@ -31,7 +31,7 @@ public class C03_ReadExcel {
     public static String banaDataGetir(int satirIndex, int sutunIndex) throws IOException {
 
         String istenenData="";
-        String dosyaYolu="src/resourrces/ulkeler.xlsx";
+        String dosyaYolu="src/resources/ulkeler.xlsx";
         FileInputStream fis=new FileInputStream(dosyaYolu);
         Workbook workbook= WorkbookFactory.create(fis);
         istenenData=workbook

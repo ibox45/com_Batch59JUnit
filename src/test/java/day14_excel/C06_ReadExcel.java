@@ -22,7 +22,7 @@ public class C06_ReadExcel {
 
         Map<String,String> ulkelerMap=new HashMap<>();
         //7. Dosya yolunu bir String degiskene atayalim
-        String dosyaYolu="src/resourrces/ulkeler.xlsx";
+        String dosyaYolu="src/resources/ulkeler.xlsx";
         //8. FileInputStream objesi olusturup,parametre olarak dosya yolunu girelim
         FileInputStream fis=new FileInputStream(dosyaYolu);
         //9. Workbook objesi olusturalim,parameter olarak fileInputStream objesini girelim
